@@ -1,5 +1,5 @@
 projects: ['JIRA', 'ABC']
 check_title: true
-check_branch: true
-check_commits: true
-ignore_case: true
+check_branch: false
+check_commits: false
+ignore_case: false
