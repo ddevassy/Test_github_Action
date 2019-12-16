@@ -1,7 +1,0 @@
-- name: Find Current Pull Request
-  uses: jwalton/gh-find-current-pr@v1.0.2
-  with:
-    # The GitHub token used to create an authenticated client.
-    github-token: # optional
-    # Sha to get PR for.  Defaults to current sha.
-    sha: # optional
