@@ -1,7 +1,0 @@
-jobs:
-  some-job:
-    steps:
-      - name: Show PR number
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: echo "The PR number is $PR_NUMBER"
