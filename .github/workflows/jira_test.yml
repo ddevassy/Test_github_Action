@@ -1,16 +1,19 @@
-name: "JiraSystem-Test"
+name: 'Jira Check'
 on:
   pull_request:
-    branches:
-      - master
+    types:
+      # Check title when opened.
+      - opened
+      # Check title when new commits are pushed.
+      # Required to use as a status check.
+      - synchronize
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        os: [macOS-latest]
-    runs-on: ${{ matrix.os }}
+  publish:
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@master
-    - run: |
-          git log -n 3 --pretty=format:%s | grep "JIRA-" && echo "JIRA looks OK"
+      - uses: actions/checkout@v1
+      - uses: dylanvann/check-pull-request-title@v1
+        with:
+          # Match pull request titles in the form UI-1234 - Message.
+          pattern: '^UI-\d* - '
