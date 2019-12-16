@@ -1,15 +1,5 @@
-name: Publish GitHub Action
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  publish:
-    name: Publish
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v1
-      - uses: dylanvann/publish-github-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+- uses: mdecoleman/pr-branch-name@1.0.0
+  id: vars
+  with:
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
+- run: echo ${{ steps.vars.outputs.branch }}
