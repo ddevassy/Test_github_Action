@@ -1,4 +1,4 @@
-projects: ['JIRA', 'ABC']
+projects: ['JIRA', 'jira', 'Jira']
 check_title: true
 check_branch: false
 check_commits: false
